@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chọn độ phân giải</h1>
+        <select id="resolution-select">
+            <option value="">Chọn một độ phân giải</option>
+            <option value="240p">240p</option>
+            <option value="360p">360p</option>
+            <option value="480p">480p</option>
+            <option value="720p">720p</option>
+            <option value="1080p">1080p (Hiệu ứng đặc biệt)</option>
+        </select>
+        <div id="image-container">
+            <img id="selected-image" src="" alt="Selected Image">
+        </div>
+        <div id="heart-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

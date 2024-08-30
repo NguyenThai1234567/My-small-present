@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    height: 100vh;  /* Sử dụng toàn bộ chiều cao của màn hình */
+    overflow: visible;  /* Cho phép nội dung bay ra ngoài mà không bị cắt */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;  /* Đặt position relative để không ảnh hưởng đến trái tim */
+    z-index: 1;
+}
+
+h1 {
+    color: #333;
+}
+
+#image-container {
+    margin-top: 20px;
+    position: relative;  /* Không ảnh hưởng đến trái tim */
+    z-index: 1;
+}
+
+#selected-image {
+    max-width: 100%;
+    height: auto;
+    display: none;
+    margin: 0 auto;  /* Căn giữa hình ảnh */
+}
+
+#heart-container {
+    position: fixed;  /* Đảm bảo trái tim luôn hiển thị trên cùng */
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;  /* Bao phủ toàn bộ chiều cao màn hình */
+    pointer-events: none;  /* Không cản trở các sự kiện tương tác khác */
+    display: none;
+    transform: translateX(-50%);  /* Căn giữa trái tim */
+    overflow: visible;  /* Cho phép trái tim bay ra ngoài mà không bị cắt */
+    z-index: 9999;  /* Đảm bảo trái tim xuất hiện ở trên cùng */
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    transform: rotate(45deg);
+    animation: fly 3s linear infinite;
+    bottom: 0;  /* Bắt đầu từ dưới cùng */
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -10px;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px) rotate(45deg);
+        opacity: 0;
+    }
+}
